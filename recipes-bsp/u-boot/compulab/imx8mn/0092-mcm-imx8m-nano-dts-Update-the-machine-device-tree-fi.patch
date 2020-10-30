@@ -1,0 +1,27 @@
+From f1b914840060db2b1180c25e852355bd51540a4b Mon Sep 17 00:00:00 2001
+From: Valentin Raevsky <valentin@compulab.co.il>
+Date: Thu, 29 Oct 2020 15:53:29 +0200
+Subject: [PATCH 92/92] mcm-imx8m-nano: dts: Update the machine device tree
+ file
+
+Signed-off-by: Valentin Raevsky <valentin@compulab.co.il>
+---
+ arch/arm/dts/cpl-imx8m-nano.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm/dts/cpl-imx8m-nano.dtsi b/arch/arm/dts/cpl-imx8m-nano.dtsi
+index 7aa571b211..ab4a1bbf59 100644
+--- a/arch/arm/dts/cpl-imx8m-nano.dtsi
++++ b/arch/arm/dts/cpl-imx8m-nano.dtsi
+@@ -479,7 +479,7 @@
+ 
+ &usbotg2 {
+ 	dr_mode = "host";
+-	status = "okay";
++	status = "disabled";
+ };
+ 
+ &cpu_alert0 {
+-- 
+2.11.0
+

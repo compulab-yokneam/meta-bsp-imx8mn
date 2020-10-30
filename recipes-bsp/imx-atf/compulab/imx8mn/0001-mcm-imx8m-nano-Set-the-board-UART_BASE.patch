@@ -1,0 +1,26 @@
+From c8390a1e8cfd8c42f3b7aa158e40ab21eab5de5a Mon Sep 17 00:00:00 2001
+From: Valentin Raevsky <valentin@compulab.co.il>
+Date: Wed, 28 Oct 2020 16:15:45 +0200
+Subject: [PATCH 1/1] mcm-imx8m-nano: Set the board UART_BASE
+
+Signed-off-by: Valentin Raevsky <valentin@compulab.co.il>
+---
+ plat/imx/imx8m/imx8mn/include/platform_def.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/plat/imx/imx8m/imx8mn/include/platform_def.h b/plat/imx/imx8m/imx8mn/include/platform_def.h
+index 967afbbee..9ce1067e9 100644
+--- a/plat/imx/imx8m/imx8mn/include/platform_def.h
++++ b/plat/imx/imx8m/imx8mn/include/platform_def.h
+@@ -51,7 +51,7 @@
+ 
+ #define HAB_RVT_BASE			U(0x00000900) /* HAB_RVT for i.MX8MM */
+ 
+-#define IMX_BOOT_UART_BASE		U(0x30890000)
++#define IMX_BOOT_UART_BASE		U(0x30880000)
+ #define IMX_BOOT_UART_CLK_IN_HZ		24000000 /* Select 24MHz oscillator */
+ 
+ #define PLAT_CRASH_UART_BASE		IMX_BOOT_UART_BASE
+-- 
+2.11.0
+
