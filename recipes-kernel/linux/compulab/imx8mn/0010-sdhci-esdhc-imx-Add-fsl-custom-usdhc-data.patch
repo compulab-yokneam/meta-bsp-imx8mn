@@ -1,0 +1,39 @@
+From 0378fc7ecfdffe0dfcfa67ef99ba6592216177cb Mon Sep 17 00:00:00 2001
+From: Valentin Raevsky <valentin@compulab.co.il>
+Date: Fri, 30 Oct 2020 10:31:52 +0200
+Subject: [PATCH 10/11] sdhci-esdhc-imx: Add fsl,custom-usdhc data
+
+Signed-off-by: Valentin Raevsky <valentin@compulab.co.il>
+---
+ drivers/mmc/host/sdhci-esdhc-imx.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/drivers/mmc/host/sdhci-esdhc-imx.c b/drivers/mmc/host/sdhci-esdhc-imx.c
+index fd404ad795c2..cedb27ea46a3 100644
+--- a/drivers/mmc/host/sdhci-esdhc-imx.c
++++ b/drivers/mmc/host/sdhci-esdhc-imx.c
+@@ -259,6 +259,13 @@ static struct esdhc_soc_data usdhc_s32v234_data = {
+ 	.flags = ESDHC_FLAG_USDHC,
+ };
+ 
++static const struct esdhc_soc_data usdhc_custom_data = {
++	.flags = ESDHC_FLAG_USDHC | ESDHC_FLAG_STD_TUNING
++			| ESDHC_FLAG_HAVE_CAP1
++			| ESDHC_FLAG_HS400 | ESDHC_FLAG_BUSFREQ
++			| ESDHC_FLAG_STATE_LOST_IN_LPMODE,
++};
++
+ struct pltfm_imx_data {
+ 	u32 scratchpad;
+ 	struct pinctrl *pinctrl;
+@@ -310,6 +317,7 @@ static const struct of_device_id imx_esdhc_dt_ids[] = {
+ 	{ .compatible = "fsl,imx8qxp-usdhc", .data = &usdhc_imx8qxp_data, },
+ 	{ .compatible = "fsl,imx8mm-usdhc", .data = &usdhc_imx8mm_data, },
+ 	{ .compatible = "fsl,s32v234-usdhc", .data = &usdhc_s32v234_data, },
++	{ .compatible = "fsl,custom-usdhc", .data = &usdhc_custom_data, },
+ 	{ /* sentinel */ }
+ };
+ MODULE_DEVICE_TABLE(of, imx_esdhc_dt_ids);
+-- 
+2.11.0
+
