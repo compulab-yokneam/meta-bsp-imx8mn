@@ -92,5 +92,6 @@ SRC_URI_append_mcm-imx8m-nano = " \
 	file://0090-SDP.patch \
 	file://0091-mcm-imx8m-nano-Add-basic-support.patch \
 	file://0092-mcm-imx8m-nano-dts-Update-the-machine-device-tree-fi.patch \
+	file://0093-mcm-imx8m-nano-dts-Fix-compatible-string.patch \
 	file://mcm-imx8m-nano_defconfig \
 "
